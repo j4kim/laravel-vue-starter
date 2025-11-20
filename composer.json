@@ -64,7 +64,13 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
-            "@php artisan migrate --graceful --ansi"
+            "@php artisan migrate --graceful --ansi",
+            "@php artisan db:seed --no-interaction --ansi",
+            "@php artisan storage:link",
+            "npm install",
+            "npm run build",
+            "git add .",
+            "git commit -m \"create project from j4kim/laravel-vue-starter\""
         ],
         "pre-package-uninstall": [
             "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
