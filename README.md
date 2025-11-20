@@ -19,13 +19,7 @@ composer create-project j4kim/laravel-vue-starter {project-name}
 ## Setup
 
 ```
-composer install
-npm install
-cp .env.example .env
-php artisan key:generate
-php artisan storage:link
-php artisan migrate
-php artisan db:seed
+composer run setup
 ```
 
 ## Run
