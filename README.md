@@ -10,6 +10,12 @@ A fork of Laravel, prepared as I like to use it:
 -   [ ] Sanctum authentication
 -   [ ] Webcron handler
 
+## Install
+
+```
+composer create-project j4kim/laravel-vue-starter {project-name}
+```
+
 ## Setup
 
 ```
@@ -18,7 +24,8 @@ npm install
 cp .env.example .env
 php artisan key:generate
 php artisan storage:link
-php artisan migrate:fresh --seed
+php artisan migrate
+php artisan db:seed
 ```
 
 ## Run
