@@ -71,6 +71,7 @@
             "@php artisan storage:link",
             "npm install",
             "npm run build",
+            "git init",
             "git add .",
             "git commit -m \"create project from j4kim/laravel-vue-starter\""
         ],
