@@ -9,7 +9,7 @@ A fork of Laravel, prepared as I like to use it:
 -   [x] [Unguard all models](https://github.com/j4kim/laravel-vue-starter/commit/22ae7a8f9a2e41e1f9ce439d6e37dcbc940ef5b2)
 -   [x] [Add version in `config('app.version')`](https://github.com/j4kim/laravel-vue-starter/commit/7ea5cc9e7188f2448dc6d67d854e33d48b2c3355)
 -   [x] [A vue SPA for front-end, using Laravel as an API](https://github.com/j4kim/laravel-vue-starter/commit/9aff0e7ad9534fb8e4e2a774152d4c2a294a710b)
--   [ ] Ziggy to share routes
+-   [x] [Ziggy to share routes](https://github.com/j4kim/laravel-vue-starter/commit/f40a1fed66e8967bef66703cfdb6d08fc44bb22f)
 -   [ ] Sanctum authentication
 -   [ ] Webcron handler
 
