@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Database\Events\QueryExecuted;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
@@ -35,5 +36,7 @@ class AppServiceProvider extends ServiceProvider
                 );
             });
         }
+
+        JsonResource::withoutWrapping();
     }
 }
