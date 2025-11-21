@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\DB;
@@ -38,5 +39,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         JsonResource::withoutWrapping();
+
+        Model::unguard();
     }
 }
