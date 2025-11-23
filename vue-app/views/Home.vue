@@ -2,8 +2,8 @@
 
 <template>
     <div>
-        <RouterLink to="private" class="underline hover:no-underline">
-            Page privée
+        <RouterLink to="profile" class="underline hover:no-underline">
+            Profil
         </RouterLink>
     </div>
 </template>

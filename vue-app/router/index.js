@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import Private from "../views/Private.vue";
+import Profile from "../views/Profile.vue";
 import { useMainStore } from "../stores/main";
 import { route } from "../../vendor/tightenco/ziggy";
 
@@ -11,9 +11,9 @@ const routes = [
         component: Home,
     },
     {
-        path: "/private",
-        name: "private",
-        component: Private,
+        path: "/profile",
+        name: "profile",
+        component: Profile,
         meta: {
             requireAuth: true,
         },
