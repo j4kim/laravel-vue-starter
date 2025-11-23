@@ -1,9 +1,21 @@
 import axios from "axios";
 import { route } from "../vendor/tightenco/ziggy";
 
-export async function axiosRequest(config) {
-    const response = await axios(config);
-    return response.data;
+async function refreshTokenAndRetry(config) {
+    await get("sanctum.csrf-cookie");
+    return await axiosRequest(config, true);
+}
+
+export async function axiosRequest(config, isRetry = false) {
+    try {
+        const response = await axios(config);
+        return response.data;
+    } catch (error) {
+        if (error.response.status === 419 && !isRetry) {
+            return await refreshTokenAndRetry(config);
+        }
+        throw error;
+    }
 }
 
 export async function request(method, name, params = null, data = null) {
