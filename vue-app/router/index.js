@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Profile from "../views/Profile.vue";
 import { useMainStore } from "../stores/main";
-import { route } from "../../vendor/tightenco/ziggy";
+import { redirectToLogin } from "../api";
 
 const routes = [
     {
@@ -27,9 +27,7 @@ const router = createRouter({
 
 router.beforeEach((to) => {
     if (to.meta?.requireAuth && !useMainStore().user) {
-        location = route("filament.admin.auth.login", {
-            intended: "/" + to.href,
-        });
+        redirectToLogin("/" + to.href);
         return false;
     }
 });

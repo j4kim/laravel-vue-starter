@@ -6,13 +6,23 @@ async function refreshTokenAndRetry(config) {
     return await axiosRequest(config, true);
 }
 
+export function redirectToLogin(intended) {
+    location = route("filament.admin.auth.login", { intended });
+}
+
 export async function axiosRequest(config, isRetry = false) {
     try {
         const response = await axios(config);
         return response.data;
     } catch (error) {
-        if (error.response.status === 419 && !isRetry) {
+        if (error.response?.status === 419 && !isRetry) {
             return await refreshTokenAndRetry(config);
+        }
+        if (
+            error.response?.status === 401 &&
+            confirm("Vous êtes déconnecté, aller à la page de login ?")
+        ) {
+            redirectToLogin(location.href);
         }
         throw error;
     }
