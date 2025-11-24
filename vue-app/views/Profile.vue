@@ -1,29 +1,16 @@
 <script setup>
-import { reactive } from "vue";
+import { ref } from "vue";
+import { get } from "../api";
 import { useMainStore } from "../stores/main";
 
 const mainStore = useMainStore();
 
-const form = reactive({
-    name: mainStore.user.name,
-});
+const quote = ref(null);
+
+get("inspire").then((data) => (quote.value = data));
 </script>
 
 <template>
     <div>Bienvenue {{ mainStore.user.name }}</div>
-    <form @submit.prevent="mainStore.updateUser(form)">
-        <p>
-            Nom:
-            <input v-model="form.name" />
-        </p>
-        <p>
-            <button type="submit">Enregistrer</button>
-        </p>
-    </form>
-    <p class="mt-4">
-        <button @click="mainStore.flushSession">Flush</button>
-    </p>
-    <p class="mt-4">
-        <button @click="mainStore.inspire">inspire</button>
-    </p>
+    <blockquote class="whitespace-pre" v-html="quote"></blockquote>
 </template>
