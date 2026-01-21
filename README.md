@@ -11,7 +11,7 @@ A fork of Laravel, prepared as I like to use it:
 - [x] [A vue SPA for front-end, using Laravel as an API](https://github.com/j4kim/laravel-vue-starter/commit/9aff0e7ad9534fb8e4e2a774152d4c2a294a710b)
 - [x] [Ziggy to share routes](https://github.com/j4kim/laravel-vue-starter/commit/f40a1fed66e8967bef66703cfdb6d08fc44bb22f)
 - [x] [A Filament admin panel](https://github.com/j4kim/laravel-vue-starter/commit/2118de725c3bf51f051ec3fbe8b18794499c3976) (on branch `filament`)
-- [ ] Sanctum authentication
+- [x] Sanctum authentication
 - [ ] Webcron handler
 
 ## Install
