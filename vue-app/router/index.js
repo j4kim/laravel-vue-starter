@@ -3,7 +3,6 @@ import Home from "../views/Home.vue";
 import Profile from "../views/Profile.vue";
 import { useMainStore } from "../stores/main";
 import { redirectToLogin } from "../api";
-import { route } from "../../vendor/tightenco/ziggy";
 
 const routes = [
     {
@@ -28,7 +27,7 @@ const router = createRouter({
 
 router.beforeEach((to) => {
     if (to.meta?.requireAuth && !useMainStore().user) {
-        redirectToLogin(route("vue-app", "") + to.href);
+        redirectToLogin(to.href);
         return false;
     }
 });
