@@ -20,12 +20,6 @@ A fork of Laravel, prepared as I like to use it:
 composer create-project j4kim/laravel-vue-starter:dev-base {project-name}
 ```
 
-Or, to use Filament:
-
-```
-composer create-project j4kim/laravel-vue-starter:dev-filament {project-name}
-```
-
 ## Setup
 
 ```
