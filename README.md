@@ -17,7 +17,7 @@ A fork of Laravel, prepared as I like to use it:
 ## Install
 
 ```
-composer create-project j4kim/laravel-vue-starter:dev-base {project-name}
+composer create-project j4kim/laravel-vue-starter {project-name}
 ```
 
 ## Setup
@@ -29,5 +29,5 @@ composer run setup
 ## Run
 
 ```
-composer run dev
+php artisan dev
 ```
